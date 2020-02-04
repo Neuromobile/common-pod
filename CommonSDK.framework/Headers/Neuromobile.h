@@ -10,6 +10,7 @@
 #import "NeuromobileUser.h"
 #import "NeuromobileService.h"
 #import "NeuromobileDelegate.h"
+#import "NMCSpcModule.h"
 
 /*!
  @brief Controls the SCP (Single Configuration Point) operations such as initializing the SCP, services and user session.
@@ -24,11 +25,15 @@
  @version 1.0
  */
 +(void) initWithSecret:(NSString *)secret;
+
+
++(void)downloadSpcModuleWithSuccess:(void(^)(NMCSpcModule *))successCallback onError:(void(^)())errorCallback;
+
 /*!
  @brief Initializes a session for the provided NeuromobileUser model.
  Before providing a NeuromobileUser, the CommonSDK must be initialized by calling Neuromobile::initWithSecret:.
  @param user A NeuromobileUser model which is used in statistics system.
- @param delegate A NeuromobileDelegate implementation to receive callbacks form Neuromobile handler.
+ @param listener A NeuromobileDelegate implementation to receive callbacks form Neuromobile handler.
  @version 1.0
  */
 +(void) setUser:(NeuromobileUser *)user withDelegate:(NSObject<NeuromobileDelegate> *)listener;

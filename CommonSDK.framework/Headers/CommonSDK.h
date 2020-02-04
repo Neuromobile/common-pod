@@ -12,3 +12,4 @@ FOUNDATION_EXPORT const unsigned char CommonSDKVersionString[];
 #import <CommonSDK/NeuromobileService.h>
 #import <CommonSDK/NeuromobileDelegate.h>
 #import <CommonSDK/NeuromobileUser.h>
+#import <CommonSDK/NMCSpcModule.h>
