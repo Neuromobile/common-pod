@@ -49,6 +49,11 @@ typedef NS_ENUM(NSUInteger, MaritalStatus){
  */
 @property (nonatomic, strong) NSString *password;
 /*!
+ @brief The Id of the user in external CRM/ERP.
+ @version 1.0
+ */
+@property (nonatomic, strong) NSString *code;
+/*!
  @brief The name of the NeuromobileUser.
  @version 1.0
  */
@@ -83,5 +88,16 @@ typedef NS_ENUM(NSUInteger, MaritalStatus){
  @version 1.0
  */
 +(NeuromobileUser *)initWithEmail:(NSString *)email andPassword:(NSString *)password;
+
+/*!
+ @brief Method to initialize a basic NeuromobileUser with his email and password.
+ Other properties can be set using the returned NeuromobileUser.
+ @param email The email of the NeuromobileUser.
+ @param password The password of te NeuromobileUser.
+ @param code The Id of the user in external CRM/ERP.
+ @return NeuromobileUser The initialized user.
+ @version 1.0
+ */
++(NeuromobileUser *)initWithEmail:(NSString *)email andPassword:(NSString *)password andCode:(NSString *)code;
 
 @end
