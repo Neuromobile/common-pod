@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CommonSDK"
-  s.version      = "1.1.9"
+  s.version      = "1.2"
   s.summary      = "A short description of CommonSDK."
 
   # This description is used to generate tags and improve search results.
@@ -69,7 +69,8 @@ Pod::Spec.new do |s|
   # s.ios.deployment_target = '12.2'
   #  When using multiple platforms 
   s.ios.deployment_target = "9.0"
-  # s.osx.deployment_target = "10.7"
+  # s.osx.deployment_target = "10.7"s.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64 armv7' }
+
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
 
@@ -121,8 +122,10 @@ Pod::Spec.new do |s|
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
-  # s.libraries = "iconv", "xml2"
-  s.ios.vendored_frameworks = 'CommonSDK.framework'
+    s.libraries = 'c++', 'stdc++'
+    s.ios.vendored_frameworks = 'CommonSDK.framework'
+    s.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64 armv7 armv7s x86_64 i386' }
+
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
