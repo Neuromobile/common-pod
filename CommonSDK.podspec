@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CommonSDK"
-  s.version      = "1.3.2"
+  s.version      = "1.4.0"
   s.summary      = "A short description of CommonSDK."
 
   # This description is used to generate tags and improve search results.
@@ -124,10 +124,9 @@ Pod::Spec.new do |s|
   # s.library   = "iconv"
     s.libraries = 'c++', 'stdc++'
     s.ios.vendored_frameworks = 'CommonSDK.framework'
-    s.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64 armv7 armv7s x86_64 i386' }
+    s.pod_target_xcconfig = { 'VALID_ARCHS' => 'armv7 armv7s x86_64 i386' }
     s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
