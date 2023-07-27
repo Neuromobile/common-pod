@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CommonSDK"
-  s.version      = "1.6.2"
+  s.version      = "1.6.3"
   s.summary      = "A short description of CommonSDK."
 
   # This description is used to generate tags and improve search results.
@@ -139,6 +139,6 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency 'RestKit', '~> 0.27.0'
+  # s.dependency 'RestKit', '~> 0.27.0'
 
 end
