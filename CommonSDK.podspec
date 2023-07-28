@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CommonSDK"
-  s.version      = "1.6.3"
+  s.version      = "1.6.4"
   s.summary      = "A short description of CommonSDK."
 
   # This description is used to generate tags and improve search results.
@@ -124,7 +124,7 @@ Pod::Spec.new do |s|
   # s.library   = "iconv"
     s.libraries = 'c++', 'stdc++'
     s.ios.vendored_frameworks = 'CommonSDK.xcframework'
-    s.source_files = "CommonSDK.xcframework/*/CommonSDK.framework/Headers/*.{h,swift}"
+  # s.source_files = "CommonSDK.xcframework/*/CommonSDK.framework/Headers/*.{h,swift}"
   # s.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64' }
   # s.pod_target_xcconfig = { 'ONLY_ACTIVE_ARCH' => 'YES' }
   # s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
@@ -139,6 +139,6 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency 'RestKit', '~> 0.27.0'
+  s.dependency 'RestKit', '~> 0.27.0'
 
 end
