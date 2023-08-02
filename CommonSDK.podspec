@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CommonSDK"
-  s.version      = "1.6.5"
+  s.version      = "1.7.0"
   s.summary      = "A short description of CommonSDK."
 
   # This description is used to generate tags and improve search results.
@@ -29,16 +29,114 @@ Pod::Spec.new do |s|
                   DESC
 
   s.homepage     = "http://neuromobilemarketing.com/"
+  # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
+
+
+  # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  #
+  #  Licensing your code is important. See http://choosealicense.com for more info.
+  #  CocoaPods will detect a license file if there is a named LICENSE*
+  #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
+  #
 
   # s.license      = "MIT (example)"
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
+
+  # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  #
+  #  Specify the authors of the library, with email addresses. Email addresses
+  #  of the authors are extracted from the SCM log. E.g. $ git log. CocoaPods also
+  #  accepts just a name if you'd rather not provide an email address.
+  #
+  #  Specify a social_media_url where others can refer to, for example a twitter
+  #  profile URL.
+  #
+
   s.author             = { "NeuromobileMarketing" => "solutions@neuromobilemarketing.com" }
-  s.ios.deployment_target = "13.0"
+  # Or just: s.author    = ""
+  # s.authors            = { "" => "solutions@neuromobilemarketing.com" }
+  # s.social_media_url   = "http://twitter.com/"
+
+  # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  #
+  #  If this Pod runs only on iOS or OS X, then specify the platform and
+  #  the deployment target. You can optionally include the target after the platform.
+  #
+
+  s.platform     = :ios
+  # s.platform     = :ios, '12.2' 
+  # s.ios.deployment_target = '12.2'
+  #  When using multiple platforms 
+  s.ios.deployment_target = "10.0"
+  # s.osx.deployment_target = "10.7"s.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64' }
+
+  # s.watchos.deployment_target = "2.0"
+  # s.tvos.deployment_target = "9.0"
+
+
+  # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  #
+  #  Specify the location from where the source should be retrieved.
+  #  Supports git, hg, bzr, svn and HTTP.
+  #
 
   s.source       = { :git => "git@github.com:Neuromobile/common_pod.git", :tag => "#{s.version}" }
-  s.libraries = 'c++', 'stdc++'
-  s.vendored_frameworks = 'CommonSDK.xcframework'
-  s.dependency 'RestKit', '~> 0.27.2'
+
+
+  # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  #
+  #  CocoaPods is smart about how it includes source code. For source files
+  #  giving a folder will include any swift, h, m, mm, c & cpp files.
+  #  For header files it will include any header in the folder.
+  #  Not including the public_header_files will make all headers public.
+  #
+
+  # s.source_files  = ""
+  # s.exclude_files = "Classes/Exclude"
+
+  # s.public_header_files = ""
+  # s.prefix_header_file = ''
+
+  # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  #
+  #  A list of resources included with the Pod. These are copied into the
+  #  target bundle with a build phase script. Anything else will be cleaned.
+  #  You can preserve files from being cleaned, please don't preserve
+  #  non-essential files like tests, examples and documentation.
+  #
+
+  # s.resource  = "icon.png"
+  # s.resources = "Resources/*.png"
+
+  # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
+
+
+  # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  #
+  #  Link your library with frameworks, or libraries. Libraries do not include
+  #  the lib prefix of their name.
+  #
+
+  # s.framework  = "SomeFramework.framework"
+  # s.frameworks = "SomeFramework", "AnotherFramework"
+
+  # s.library   = "iconv"
+  # s.libraries = 'c++', 'stdc++'
+    s.ios.vendored_frameworks = 'CommonSDK.framework'
+    s.pod_target_xcconfig = { 'VALID_ARCHS' => ' armv7 armv7s arm64 arm64e x86_64' }
+    s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+    s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+
+  # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  #
+  #  If your library depends on compiler flags you can set them in the xcconfig hash
+  #  where they will only apply to your library. If you depend on other Podspecs
+  #  you can include multiple dependencies to ensure it works.
+
+  # s.requires_arc = true
+
+  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
+  s.dependency 'RestKit', '~> 0.27.0'
 
 end
